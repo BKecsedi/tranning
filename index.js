@@ -1,3 +1,5 @@
+function rollDice() { 
+
 var randomNumber1 = Math.floor(Math.random() * 6) +1; //1-6 random number
 var randomDiceImage = "dice" + randomNumber1 + ".png" ; // dice1.png-dice6.png
 var randomImageSource = "images/" + randomDiceImage ; //images/dice1.png - images/dice6.png
@@ -19,3 +21,9 @@ else if (randomNumber2 > randomNumber1) {
 else {
     document.querySelector("h1").innerHTML = "Draw!";
 }
+}
+document.addEventListener("keydown", function(event) {
+  if (event.code === "Space") {  // space billentyű lenyomása
+    rollDice();                  // meghívja a dobás függvényt
+  }
+});
